@@ -19,9 +19,11 @@ export const translations = {
     ok: "ОК",
     warranty_tab: "Гарантия",
     warranty_management: "Управление гарантией",
-model_label: "МОДЕЛЬ",
-serial_number_label: "СЕРИЙНЫЙ НОМЕР",
-expiry_date_label: "ДАТА ОКОНЧАНИЯ",
+    model_label: "МОДЕЛЬ",
+    serial_number_label: "СЕРИЙНЫЙ НОМЕР",
+    expiry_date_label: "ДАТА ОКОНЧАНИЯ",
+    "search_warranty_placeholder": "Поиск по серийному номеру...",
+    
 
     // Header
     sync_active: "Синхронизация активна",
@@ -291,9 +293,10 @@ expiry_date_label: "ДАТА ОКОНЧАНИЯ",
     ok: "ОК",
     warranty_tab: "Гарантія",
     warranty_management: "Управління гарантією",
-model_label: "МОДЕЛЬ",
-serial_number_label: "СЕРІЙНИЙ НОМЕР",
-expiry_date_label: "ДАТА ЗАКІНЧЕННЯ",
+    model_label: "МОДЕЛЬ",
+    serial_number_label: "СЕРІЙНИЙ НОМЕР",
+    expiry_date_label: "ДАТА ЗАКІНЧЕННЯ",
+    "search_warranty_placeholder": "Пошук за серійним номером...",
 
     // Header
     sync_active: "Синхронізація активна",
