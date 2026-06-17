@@ -13,14 +13,14 @@ export default function PasswordGate({ onSuccess }: PasswordGateProps) {
   const [success, setSuccess] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  if (password === import.meta.env.VITE_APP_PASSWORD) {
+ 
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setError(null);
     setIsSubmitting(true);
 
-    if (password === CORRECT_PASSWORD) {
+  if (password === import.meta.env.VITE_APP_PASSWORD) {
       setSuccess(true);
       setTimeout(() => {
         setIsSubmitting(false);
