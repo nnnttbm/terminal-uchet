@@ -418,8 +418,8 @@ export default function App() {
     />
   )}
   <AlertCircle className={`relative w-4 h-4 z-10 ${activeTab === 'warranty' ? 'text-blue-300' : 'text-slate-400'}`} />
- <span className="relative z-10">{t('warranty_tab')}</span>
-                  </button>
+  <span className="relative z-10">{t('warranty_tab')}</span>
+</button>
                   
                   <button
                     onClick={() => setActiveTab('help')}
