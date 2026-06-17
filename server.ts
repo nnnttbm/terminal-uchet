@@ -185,7 +185,7 @@ app.get('/api/data', (req, res) => {
 
 // TERMINALS
 app.post('/api/terminals', (req, res) => {
-  const { model, serialNumber, status } = req.body;
+  const { model, serialNumber, status, warrantyDate } = req.body;
   if (!model || !serialNumber || !status) {
     return res.status(400).json({ error: 'Модель, серийный номер и статус обязательны' });
   }
@@ -203,7 +203,8 @@ app.post('/api/terminals', (req, res) => {
     model,
     serialNumber,
     status,
-    createdAt: new Date().toISOString()
+    createdAt: new Date().toISOString(),
+    warrantyDate
   };
 
   db.terminals.push(newTerminal);
@@ -213,7 +214,7 @@ app.post('/api/terminals', (req, res) => {
 
 app.put('/api/terminals/:id', (req, res) => {
   const { id } = req.params;
-  const { model, serialNumber, status } = req.body;
+  const { model, serialNumber, status, warrantyDate } = req.body;
 
   const db = readDatabase();
   const index = db.terminals.findIndex((t: any) => t.id === id);
@@ -225,6 +226,9 @@ app.put('/api/terminals/:id', (req, res) => {
   if (model) db.terminals[index].model = model;
   if (serialNumber) db.terminals[index].serialNumber = serialNumber;
   if (status) db.terminals[index].status = status;
+  if (warrantyDate !== undefined) {
+      db.terminals[index].warrantyDate = warrantyDate;
+    }
 
   writeDatabase(db);
   res.json(db.terminals[index]);
