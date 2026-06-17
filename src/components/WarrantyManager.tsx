@@ -8,17 +8,17 @@ interface WarrantyManagerProps {
 }
 
 export default function WarrantyManager({ terminals, onUpdateTerminal }: WarrantyManagerProps) {
+  const { t } = useI18n();
   return (
-    const { t } = useI18n();
     <div className="p-6 bg-slate-900 rounded-xl border border-slate-800">
     <h2 className="text-xl font-bold mb-6 text-slate-100">{t('warranty_management')}</h2>
       <div className="overflow-x-auto">
         <table className="w-full text-left text-sm text-slate-400">
           <thead className="text-xs uppercase bg-slate-800 text-slate-300">
             <tr>
-              <th className="px-4 py-3">{t('model_label')}</th>
+              <th className="px-4 py-3">{t('expiry_date_label')}</th>
               <th className="px-4 py-3">{t('serial_number_label')}</th>
-              <th className="px-4 py-3">{t('serial_number_label')}</th>
+              <th className="px-4 py-3">{t('expiry_date_label')}</th>
             </tr>
           </thead>
           <tbody className="divide-y divide-slate-800">
