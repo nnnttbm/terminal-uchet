@@ -16,7 +16,7 @@ export default function WarrantyManager({ terminals, onUpdateTerminal }: Warrant
         <table className="w-full text-left text-sm text-slate-400">
           <thead className="text-xs uppercase bg-slate-800 text-slate-300">
             <tr>
-              <th className="px-4 py-3">{t('expiry_date_label')}</th>
+              <th className="px-4 py-3">{t('model_label')}</th>
               <th className="px-4 py-3">{t('serial_number_label')}</th>
               <th className="px-4 py-3">{t('expiry_date_label')}</th>
             </tr>
