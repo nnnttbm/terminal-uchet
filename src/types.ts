@@ -6,6 +6,7 @@ export interface Terminal {
   serialNumber: string;
   status: TerminalStatus;
   createdAt: string;
+  warrantyDate?: string;
 }
 
 export interface HistoryEntry {
