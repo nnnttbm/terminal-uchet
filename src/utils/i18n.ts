@@ -17,6 +17,7 @@ export const translations = {
     from: "из",
     pcs: "шт.",
     ok: "ОК",
+    warranty_tab: "Гарантия",
 
     // Header
     sync_active: "Синхронизация активна",
@@ -284,6 +285,7 @@ export const translations = {
     from: "з",
     pcs: "шт.",
     ok: "ОК",
+    warranty_tab: "Гарантія",
 
     // Header
     sync_active: "Синхронізація активна",
