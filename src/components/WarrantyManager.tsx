@@ -27,16 +27,18 @@ export default function WarrantyManager({ terminals, onUpdateTerminal }: Warrant
     <div className="p-6 bg-slate-900 rounded-xl border border-slate-800">
     <h2 className="text-xl font-bold mb-6 text-slate-100">{t('warranty_management')}</h2>
       <div className="flex gap-4 mb-4">
-        <input
-          type="text"
-          placeholder="Пошук..."
-          className="flex-grow p-2 bg-slate-800 border border-slate-700 rounded text-slate-100"
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-        />
+        <div className="relative flex-grow">
+          <input
+            type="text"
+            placeholder={t('search_warranty_placeholder')}
+            className="w-full p-2 pl-4 bg-slate-900 border border-slate-700 rounded-lg text-slate-100 focus:outline-none focus:border-blue-500"
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+          />
+        </div>
         <button 
           onClick={() => setSortOrder(prev => prev === 'asc' ? 'desc' : 'asc')}
-          className="px-4 py-2 bg-slate-800 border border-slate-700 rounded text-slate-300 hover:bg-slate-700"
+          className="px-4 py-2 bg-slate-800 border border-slate-700 rounded-lg text-slate-300 hover:bg-slate-700"
         >
           {sortOrder === 'asc' ? 'Дата ↑' : 'Дата ↓'}
         </button>
