@@ -13,7 +13,7 @@ export default function PasswordGate({ onSuccess }: PasswordGateProps) {
   const [success, setSuccess] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const CORRECT_PASSWORD = 'Peremoha2026';
+  if (password === import.meta.env.VITE_APP_PASSWORD) {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
