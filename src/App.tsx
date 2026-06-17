@@ -10,6 +10,7 @@ import PasswordGate from './components/PasswordGate';
 import TerminalSetupWizard from './components/TerminalSetupWizard';
 import RecentMovements from './components/RecentMovements';
 import ActGeneratorModal from './components/ActGeneratorModal';
+import WarrantyManager from './components/WarrantyManager';
 import { Monitor, BookOpen, AlertCircle, RefreshCw, BarChart2, History, FileText } from 'lucide-react';
 import { useI18n } from './context/LanguageContext';
 import { motion, AnimatePresence } from 'motion/react';
@@ -20,7 +21,7 @@ export default function App() {
     return localStorage.getItem('peremoha_auth') === 'true';
   });
 
-  const [activeTab, setActiveTab] = useState<'terminals' | 'acts' | 'instructions' | 'help' | 'setup' | 'movements'>('terminals');
+  const [activeTab, setActiveTab] = useState<'terminals' | 'acts' | 'instructions' | 'help' | 'setup' | 'movements' | 'warranty'>('terminals');
   
   // Database States
   const [terminals, setTerminals] = useState<Terminal[]>([]);
@@ -404,6 +405,23 @@ export default function App() {
                   </button>
 
                   <button
+  onClick={() => setActiveTab('warranty')}
+  className={`relative flex items-center space-x-2 px-5 py-2.5 rounded-xl text-xs font-bold tracking-wide transition-colors cursor-pointer ${
+    activeTab === 'warranty' ? 'text-blue-300' : 'text-slate-400 hover:text-white'
+  }`}
+>
+  {activeTab === 'warranty' && (
+    <motion.div
+      layoutId="activeTabPill"
+      className="absolute inset-0 bg-blue-500/15 border border-blue-500/30 rounded-xl"
+      transition={{ type: "spring", stiffness: 380, damping: 30 }}
+    />
+  )}
+  <AlertCircle className={`relative w-4 h-4 z-10 ${activeTab === 'warranty' ? 'text-blue-300' : 'text-slate-400'}`} />
+  <span className="relative z-10">Гарантия</span>
+</button>
+                  
+                  <button
                     onClick={() => setActiveTab('help')}
                     className="relative flex items-center space-x-2 px-5 py-2.5 rounded-xl text-xs font-bold tracking-wide transition-colors cursor-pointer"
                   >
@@ -518,6 +536,13 @@ export default function App() {
                     />
                   )}
 
+                  {activeTab === 'warranty' && (
+  <WarrantyManager 
+    terminals={terminals} 
+    onUpdateTerminal={handleUpdateTerminal} 
+  />
+)}
+                  
                   {activeTab === 'help' && (
                     <SCDirectionsHelp
                       instructions={instructions}
