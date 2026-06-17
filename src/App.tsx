@@ -405,20 +405,20 @@ export default function App() {
                   </button>
 
                   <button
-  onClick={() => setActiveTab('warranty')}
-  className={`relative flex items-center space-x-2 px-5 py-2.5 rounded-xl text-xs font-bold tracking-wide transition-colors cursor-pointer ${
-    activeTab === 'warranty' ? 'text-blue-300' : 'text-slate-400 hover:text-white'
-  }`}
->
-  {activeTab === 'warranty' && (
-    <motion.div
-      layoutId="activeTabPill"
-      className="absolute inset-0 bg-blue-500/15 border border-blue-500/30 rounded-xl"
-      transition={{ type: "spring", stiffness: 380, damping: 30 }}
-    />
-  )}
-  <AlertCircle className={`relative w-4 h-4 z-10 ${activeTab === 'warranty' ? 'text-blue-300' : 'text-slate-400'}`} />
-  <span className="relative z-10">{t('Гарантія')}</span>
+                    onClick={() => setActiveTab('warranty')}
+                     className={`relative flex items-center space-x-2 px-5 py-2.5 rounded-xl text-xs font-bold tracking-wide transition-colors cursor-pointer ${
+                       activeTab === 'warranty' ? 'text-blue-300' : 'text-slate-400 hover:text-white'
+                     }`}
+                    >
+                    {activeTab === 'warranty' && (
+                      <motion.div
+                         layoutId="activeTabPill"
+                        className="absolute inset-0 bg-blue-500/15 border border-blue-500/30 rounded-xl"
+                         transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                        />
+                      )}
+                    <AlertCircle className={`relative w-4 h-4 z-10 ${activeTab === 'warranty' ? 'text-blue-300' : 'text-slate-400'}`} />  
+                    <span className="relative z-10">{t('Гарантія')}</span>
                     </button>
                   
                   <button
