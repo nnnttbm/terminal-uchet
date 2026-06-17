@@ -18,6 +18,10 @@ export const translations = {
     pcs: "шт.",
     ok: "ОК",
     warranty_tab: "Гарантия",
+    warranty_management: "Управление гарантией",
+model_label: "МОДЕЛЬ",
+serial_number_label: "СЕРИЙНЫЙ НОМЕР",
+expiry_date_label: "ДАТА ОКОНЧАНИЯ",
 
     // Header
     sync_active: "Синхронизация активна",
@@ -286,6 +290,10 @@ export const translations = {
     pcs: "шт.",
     ok: "ОК",
     warranty_tab: "Гарантія",
+    warranty_management: "Управління гарантією",
+model_label: "МОДЕЛЬ",
+serial_number_label: "СЕРІЙНИЙ НОМЕР",
+expiry_date_label: "ДАТА ЗАКІНЧЕННЯ",
 
     // Header
     sync_active: "Синхронізація активна",
