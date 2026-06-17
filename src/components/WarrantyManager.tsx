@@ -1,6 +1,7 @@
 import React from 'react';
 import { Terminal } from '../types';
-import { useI18n } from '../utils/i18n';
+import { useI18n } from '../context/LanguageContext';
+
 
 interface WarrantyManagerProps {
   terminals: Terminal[];
