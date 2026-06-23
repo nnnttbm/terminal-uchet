@@ -20,6 +20,21 @@ export default function PasswordGate({ onSuccess }: PasswordGateProps) {
     setError(null);
     setIsSubmitting(true);
 
+    // Теперь используем переменную окружения прямо здесь
+    if (password === import.meta.env.VITE_APP_PASSWORD) {
+      setSuccess(true);
+      setTimeout(() => {
+        setIsSubmitting(false);
+        onSuccess();
+      }, 1250);
+    } else {
+      setTimeout(() => {
+        setError('Введен неверный код доступа. Доступ к терминалам заблокирован!');
+        setIsSubmitting(false);
+      }, 350);
+    }
+  };
+
   if (password === import.meta.env.VITE_APP_PASSWORD) {
       setSuccess(true);
       setTimeout(() => {
